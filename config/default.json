@@ -8,9 +8,9 @@
     "output": "",
     "entry": "",
     "layout": "",
-    "theme": "",
-    "source": ""
+    "theme": ""
   },
+  "columns": ["home", "about"],
   "config": {
     "domain": "",
     "favicon": ""
