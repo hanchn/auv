@@ -1,0 +1,16 @@
+{
+  "name": "auvweb",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "npm run cli.js -run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "remark": "^15.0.1",
+    "unified": "^11.0.4"
+  }
+}
