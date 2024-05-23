@@ -2,7 +2,7 @@
   "source": "dom",
   "structure": {
     "title": "h1",
-    "description": "h1"
+    "img": "img"
   },
   "reference": {
     "css": [],
