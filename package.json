@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "serve": "npm run cli.js -run",
+    "build": "",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

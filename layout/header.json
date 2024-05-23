@@ -1,0 +1,10 @@
+{
+  "index": {
+    "url": "/",
+    "children": ""
+  },
+  "about": {
+    "url": "/",
+    "children": []
+  }
+}
