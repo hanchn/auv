@@ -8,9 +8,8 @@
     "output": "",
     "entry": "home",
     "layout": "",
-    "theme": ""
+    "theme": "default"
   },
-  "columns": ["home", "about"],
   "config": {
     "domain": "",
     "favicon": ""

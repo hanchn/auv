@@ -11,3 +11,13 @@
  -- www 项目部署文件（线上正式环境）
  -- cli 命令集
  -- assets 静态资源文件
+
+ ## CLI
+
+-- 监控生成HTML
+  -- 组装生成JS 
+  -- 组装生成CSS
+  -- 组装生成imgs
+  -- 解析markdown
+  -- 组装生成html
+  -- 组装生成SEO
