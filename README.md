@@ -7,4 +7,5 @@
  -- theme 主题文件
    -- default 默认主题
      -- index.md 首页
+     -- about
  -- www 项目部署文件
