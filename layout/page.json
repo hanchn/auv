@@ -1,12 +1,13 @@
 {
+  "module": "page",
   "source": "dom",
   "structure": {
     "title": "h1",
     "description": "h1"
   },
   "reference": {
-    "css": [],
-    "js": [],
+    "css": ["public", "header", "page", "footer"],
+    "js": ["public", ""],
     "imgs": []
   }
 }

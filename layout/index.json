@@ -1,0 +1,19 @@
+{
+  "module": "index",
+  "source": "data",
+  "structure": {
+    "index": {
+      "url": "/",
+      "children": ""
+    },
+    "about": {
+      "url": "/",
+      "children": []
+    }
+  },
+  "reference": {
+    "css": [],
+    "js": [],
+    "imgs": []
+  }
+}
