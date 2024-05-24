@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "serve": "npm run cli.js -run",
-    "build": "",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "auv": "node ./cli/load.js",
+    "dev": "npm run auv dev",
+    "test": "npm run auv test",
+    "build": "npm run auv build"
   },
   "author": "",
   "license": "ISC",
