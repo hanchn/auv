@@ -2,21 +2,46 @@ import { promises as fs } from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { marked } from 'marked';
-const projectRoot = process.cwd();
 
-// Helper function to get the current directory
+const projectRoot = process.cwd();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// Helper function to get the current time
+const getCurrentTime = () => {
+  return new Date().toISOString();
+};
+
 // Function to convert Markdown to HTML
-const convertMarkdownToHtml = async (inputPath, outputPath) => {
+const convertMarkdownToHtml = async (inputPath, outputPath, isUpdate) => {
   try {
     const markdownContent = await fs.readFile(inputPath, 'utf-8');
     const htmlContent = marked(markdownContent);
-    await fs.writeFile(outputPath, htmlContent);
+
+    let finalHtmlContent = htmlContent;
+
+    if (isUpdate) {
+      const updateTime = getCurrentTime();
+      finalHtmlContent += `\n<span data-update="${updateTime}"></span>`;
+    } else {
+      const generateTime = getCurrentTime();
+      finalHtmlContent += `\n<span data-generate="${generateTime}"></span>`;
+    }
+
+    await fs.writeFile(outputPath, finalHtmlContent);
     console.log(`Converted ${inputPath} to ${outputPath}`);
   } catch (error) {
     console.error(`Error converting ${inputPath}:`, error);
+  }
+};
+
+// Function to check if the HTML file exists
+const checkIfHtmlExists = async (filePath) => {
+  try {
+    await fs.access(filePath);
+    return true;
+  } catch {
+    return false;
   }
 };
 
@@ -32,7 +57,8 @@ const traverseDirectory = async (srcDir, destDir) => {
         await traverseDirectory(srcFilePath, destFilePath);
       } else if (file.isFile() && path.extname(file.name) === '.md') {
         const outputFilePath = path.join(destDir, path.basename(file.name, '.md') + '.html');
-        await convertMarkdownToHtml(srcFilePath, outputFilePath);
+        const htmlExists = await checkIfHtmlExists(outputFilePath);
+        await convertMarkdownToHtml(srcFilePath, outputFilePath, htmlExists);
       }
     }
   } catch (error) {
