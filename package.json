@@ -5,9 +5,6 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "auv": "node ./cli/load.js",
-    "dev": "npm run auv dev",
-    "test": "npm run auv test",
     "build": "npm run auv build"
   },
   "author": "",
